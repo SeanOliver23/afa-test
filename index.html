@@ -11,6 +11,9 @@
             margin: 0 auto;
             padding: 20px;
             background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         h1 {
             color: #333;
@@ -22,10 +25,44 @@
             line-height: 1.6;
             color: #666;
         }
+        .content {
+            flex: 1;
+        }
+        .features {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #888;
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to AFA Test</h1>
-    <p>This is a simple test page.</p>
+    <div class="content">
+        <h1>Welcome to AFA Test</h1>
+        <p>This is a demonstration project showcasing simple web development practices and GitHub workflow management. It serves as an example of how to structure a basic web project and implement version control.</p>
+        
+        <div class="features">
+            <h2>Project Features</h2>
+            <ul>
+                <li>Clean, responsive HTML5 structure</li>
+                <li>CSS styling with modern practices</li>
+                <li>GitHub workflow demonstration</li>
+                <li>Version control best practices</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Contact us: info@example.com</p>
+        <p>&copy; 2025 AFA Test Project. All rights reserved.</p>
+    </footer>
 </body>
 </html>
