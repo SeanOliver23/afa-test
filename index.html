@@ -3,29 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to AFA Test</title>
+    <title>Grant's ADHD Journey</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --dark: #2C3E50;
+            --light: #F7F9F9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
-        p {
+            background: var(--light);
+            color: var(--dark);
             line-height: 1.6;
-            color: #666;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--dark);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .journey-section {
+            padding: 4rem 0;
+            background: var(--dark);
+            color: var(--light);
+            margin: 4rem 0;
+        }
+
+        .resources {
+            padding: 4rem 0;
+        }
+
+        .resources h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            background: var(--dark);
+            color: var(--light);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to AFA Test</h1>
-    <p>This is a simple test page.</p>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#tools" class="cta-button">Tools & Tips</a>
+                <a href="#journey" class="cta-button">My Journey</a>
+                <a href="#resources" class="cta-button">Resources</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Hey! I'm Grant 👋</h1>
+            <p>Living, thriving, and navigating life with ADHD. Here's my toolkit for turning challenges into superpowers!</p>
+            <a href="#contact" class="cta-button">Let's Connect!</a>
+        </section>
+
+        <section id="tools" class="tools-grid">
+            <div class="tool-card">
+                <h3>🎯 Focus Techniques</h3>
+                <p>Discover the Pomodoro Technique, time-blocking, and other methods that help me stay on track. These aren't just productivity hacks – they're game-changers for the ADHD brain!</p>
+            </div>
+
+            <div class="tool-card">
+                <h3>🎵 Sound & Environment</h3>
+                <p>From background music to workspace setup, learn how I create an environment that works with (not against) my ADHD. Spoiler: It involves lots of fidget toys!</p>
+            </div>
+
+            <div class="tool-card">
+                <h3>📱 Tech Tools</h3>
+                <p>My favorite apps and digital tools that keep me organized. Because sometimes the best way to remember something is to let your phone do it for you!</p>
+            </div>
+        </section>
+
+        <section id="journey" class="journey-section">
+            <div class="container">
+                <h2>My ADHD Journey</h2>
+                <p>From struggling student to successful speaker, my path hasn't been linear (but hey, what ADHD journey is?). I've learned that our differences aren't deficits – they're opportunities to think differently and create unique solutions.</p>
+            </div>
+        </section>
+
+        <section id="resources" class="resources">
+            <h2>Helpful Resources</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>📚 Recommended Reading</h3>
+                    <p>"Delivered from Distraction" by Edward M. Hallowell<br>
+                    "The Smart but Scattered Guide to Success" by Peg Dawson</p>
+                </div>
+                <div class="tool-card">
+                    <h3>🎧 Must-Listen Podcasts</h3>
+                    <p>"ADHD reWired" with Eric Tivers<br>
+                    "Translating ADHD" with Shelly Collins and Cameron Gott</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Grant's ADHD Journey | Let's connect and share our experiences!</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.to('.hero', {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+
+            gsap.to('.tool-card', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: '.tool-card',
+                    start: 'top 80%'
+                }
+            });
+        });
+    </script>
 </body>
 </html>
